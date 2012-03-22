@@ -7,7 +7,7 @@
 //
 
 #import "HHAppDelegate.h"
-
+#import "HHViewController.h"
 @implementation HHAppDelegate
 
 @synthesize window = _window;
@@ -23,6 +23,9 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    HHViewController *viewController = [[HHViewController alloc]initWithNibName:@"HHViewController" bundle:nil];
+    self.window.rootViewController = viewController;
+    [viewController release];
     [self.window makeKeyAndVisible];
     return YES;
 }
